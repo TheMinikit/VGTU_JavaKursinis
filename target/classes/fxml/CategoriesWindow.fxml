@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.CategoriesWindowController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="System">
+            <items>
+              <MenuItem fx:id="menuSystemLogOut" mnemonicParsing="false" onAction="#SystemLogout" text="Log Out" />
+                  <MenuItem fx:id="menuSystemExit" mnemonicParsing="false" onAction="#SystemExit" text="Exit" />
+                  <MenuItem fx:id="menuSystemReturn" mnemonicParsing="false" onAction="#SystemReturn" text="Return" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="menuEditCategoryDelete" mnemonicParsing="false" onAction="#EditCategoryDelete" text="Category Delete" />
+                  <MenuItem fx:id="menuEditCategoryCreate" mnemonicParsing="false" onAction="#EditCategoryCreate" text="Category Create" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="menuHelpAbout" mnemonicParsing="false" onAction="#helpAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox layoutX="1.0" layoutY="28.0" prefHeight="372.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="306.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="selectCategoryComboBox" onAction="#loadCategoryData" prefHeight="25.0" prefWidth="149.0" promptText="&lt;Kategorija&gt;" />
+                        <Label layoutX="22.0" layoutY="129.0" text="ID:" />
+                        <Label layoutX="22.0" layoutY="148.0" text="Owner:" />
+                        <Label fx:id="categoryOwnerText" layoutX="78.0" layoutY="148.0" text="text" />
+                        <Label fx:id="categoryIdText" layoutX="76.0" layoutY="129.0" prefHeight="17.0" prefWidth="38.0" text="text" />
+                        <ComboBox fx:id="filterCategoriesPropertyComboBox" layoutX="1.0" layoutY="35.0" prefHeight="25.0" prefWidth="91.0" promptText="&lt;Prprty&gt;" />
+                        <ComboBox fx:id="filterCategoriesOperationComboBox" layoutX="94.0" layoutY="35.0" prefHeight="25.0" prefWidth="57.0" promptText="?" />
+                        <TextField fx:id="filterCategoriesValueText" layoutX="152.0" layoutY="35.0" prefHeight="25.0" prefWidth="45.0" />
+                        <Button fx:id="getAllCategories" layoutX="149.0" mnemonicParsing="false" onAction="#getAllCategories" text="getAll" />
+                     </children>
+                  </AnchorPane>
+                  <VBox prefHeight="179.0" prefWidth="202.0">
+                     <children>
+                        <ComboBox fx:id="categoryAccessUserComboBox" onAction="#selectCategoryAccessUser" prefWidth="150.0" />
+                        <Button fx:id="addAcessUserButton" mnemonicParsing="false" onAction="#addAccessUser" prefHeight="43.0" prefWidth="47.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="removeAccessUserButton" mnemonicParsing="false" onAction="#removeAccessUser" prefHeight="43.0" prefWidth="47.0" text="-">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="179.0" prefWidth="198.0">
+                     <children>
+                        <ComboBox fx:id="categorySubCategoryComboBox" onAction="#selectCategorySubCategory" prefWidth="150.0" />
+                        <Button fx:id="addSubCategoryButton" mnemonicParsing="false" onAction="#addSubCategory" prefHeight="43.0" prefWidth="47.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="removeSubCategoryButton" mnemonicParsing="false" onAction="#removeSubCategory" prefHeight="43.0" prefWidth="47.0" text="-">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="193.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane prefHeight="141.0" prefWidth="203.0">
+                     <children>
+                        <Separator layoutX="-4.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="234.0" prefWidth="6.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Separator>
+                        <Label layoutX="15.0" layoutY="4.0" text="Kategorijos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="98.0" layoutY="4.0" text="redagavimas">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="2.0" layoutY="35.0" text="Pavadinimas" />
+                        <TextField fx:id="categoryNameText" layoutX="2.0" layoutY="52.0" promptText="Kategorijos_pavadinimas" />
+                        <Label layoutX="2.0" layoutY="90.0" text="Islaidos" />
+                        <TextField fx:id="categorySpendingText" layoutX="2.0" layoutY="105.0" promptText="failopavadinimas.txt" />
+                        <Label layoutX="2.0" layoutY="138.0" text="Pajamos" />
+                        <TextField fx:id="categoryEarningText" layoutX="2.0" layoutY="156.0" promptText="failopavadinimas.txt" />
+                        <Button fx:id="categoryNameButton" layoutX="151.0" layoutY="52.0" mnemonicParsing="false" onAction="#setCategoryName" prefHeight="25.0" prefWidth="40.0" text="set" />
+                        <Button fx:id="categorySpendingButton" layoutX="151.0" layoutY="105.0" mnemonicParsing="false" onAction="#setCategorySpending" prefHeight="25.0" prefWidth="40.0" text="set" />
+                        <Button fx:id="categoryEarningButton" layoutX="151.0" layoutY="156.0" mnemonicParsing="false" onAction="#setCategoryEarning" prefHeight="25.0" prefWidth="40.0" text="set" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="134.0" prefWidth="198.0">
+                     <children>
+                        <ComboBox fx:id="importCategoriesComboBox" layoutX="20.0" layoutY="44.0" prefWidth="150.0" promptText="&lt;Importo Failas&gt;" />
+                        <Label layoutX="26.0" layoutY="14.0" text="Importuoti kategorijas">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="importCategoriesButton" layoutX="59.0" layoutY="89.0" mnemonicParsing="false" onAction="#importCategories" text="Importuoti" />
+                        <Button fx:id="filterCategoriesButton" layoutX="-139.0" layoutY="-113.0" mnemonicParsing="false" onAction="#filterCategories" text="Filtruoti" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="134.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="14.0" text="Eksportuoti kategorijas">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="exportCategoriesButton" layoutX="56.0" layoutY="89.0" mnemonicParsing="false" onAction="#exportCategories" text="Eksportuoti" />
+                        <TextField fx:id="exportCategoriesFileText" layoutX="20.0" layoutY="44.0" promptText="failopavadinimas.txt" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

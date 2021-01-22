@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.UsersWindowController">
+   <children>
+      <HBox layoutX="-1.0" layoutY="26.0" prefHeight="373.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="selectUserComboBox" layoutX="1.0" layoutY="81.0" onAction="#loadUserData" prefWidth="150.0" promptText="&lt;Asmens Kodas&gt;" />
+                  <Label layoutX="25.0" layoutY="64.0" text="Vartotojas" />
+                  <ComboBox fx:id="filterUsersPropertyComboBox" layoutX="3.0" layoutY="121.0" prefHeight="25.0" prefWidth="91.0" promptText="&lt;Prprty&gt;" />
+                  <ComboBox fx:id="filterUsersOperationComboBox" layoutX="95.0" layoutY="121.0" prefHeight="25.0" prefWidth="57.0" promptText="?" />
+                  <TextField fx:id="filterUsersValueText" layoutX="154.0" layoutY="121.0" prefHeight="25.0" prefWidth="45.0" />
+                  <Button fx:id="filterUsersButton" layoutX="76.0" layoutY="162.0" mnemonicParsing="false" onAction="#filterUsers" text="Filtruoti" />
+                  <Button fx:id="getAllUsersButton" layoutX="153.0" layoutY="81.0" mnemonicParsing="false" onAction="#getAllUsers" text="getAll" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="userNameText" layoutX="26.0" layoutY="81.0" prefHeight="25.0" prefWidth="123.0" />
+                  <Button fx:id="setUserNameButton" layoutX="149.0" layoutY="80.0" mnemonicParsing="false" onAction="#setUserName" prefHeight="25.0" prefWidth="37.0" text="set" />
+                  <Label layoutX="26.0" layoutY="64.0" text="Vardas" />
+                  <TextField fx:id="userSurnameText" layoutX="27.0" layoutY="160.0" prefHeight="25.0" prefWidth="123.0" />
+                  <Button fx:id="setUserSurnameButton" layoutX="150.0" layoutY="159.0" mnemonicParsing="false" onAction="#setUserSurname" prefHeight="25.0" prefWidth="37.0" text="set" />
+                  <Label layoutX="27.0" layoutY="143.0" text="Pavarde" />
+                  <ComboBox fx:id="importUsersComboBox" layoutX="26.0" layoutY="266.0" onAction="#loadImportUsersFile" prefWidth="150.0" promptText="&lt;Importo Failas&gt;" />
+                  <Label layoutX="32.0" layoutY="238.0" text="Importuoti vartotojus">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="importUsersButton" layoutX="64.0" layoutY="305.0" mnemonicParsing="false" onAction="#importUsers" text="Importuoti" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="userBirthYearText" layoutX="14.0" layoutY="82.0" prefHeight="25.0" prefWidth="123.0" />
+                  <Button fx:id="setUserBirthYearButton" layoutX="137.0" layoutY="81.0" mnemonicParsing="false" onAction="#setUserBirthYear" prefHeight="25.0" prefWidth="37.0" text="set" />
+                  <Label layoutX="15.0" layoutY="65.0" text="Gimimo metai" />
+                  <TextField fx:id="userPasswordText" layoutX="15.0" layoutY="160.0" prefHeight="25.0" prefWidth="123.0" />
+                  <Button fx:id="setUserPasswordButton" layoutX="138.0" layoutY="159.0" mnemonicParsing="false" onAction="#setUserPassword" prefHeight="25.0" prefWidth="37.0" text="set" />
+                  <Label layoutX="15.0" layoutY="143.0" text="Slaptazodis" />
+                  <Label layoutX="19.0" layoutY="238.0" text="Eksportuoti vartotojus">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exportUsersButton" layoutX="52.0" layoutY="308.0" mnemonicParsing="false" onAction="#exportUsers" text="Eksportuoti" />
+                  <TextField fx:id="exportUsersFileText" layoutX="26.0" layoutY="264.0" promptText="failopavadinimas.txt" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <MenuBar layoutX="-1.0" layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="System">
+            <items>
+              <MenuItem fx:id="menuSystemLogout" mnemonicParsing="false" onAction="#systemLogout" text="Log Out" />
+                  <MenuItem fx:id="menuSystemExit" mnemonicParsing="false" onAction="#systemExit" text="Exit" />
+                  <MenuItem fx:id="menuSystemReturn" mnemonicParsing="false" onAction="#SystemReturn" text="Return" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="menuEditUserDelete" mnemonicParsing="false" onAction="#editUserDelete" text="User Delete" />
+                  <MenuItem fx:id="menuEditUserCreate" mnemonicParsing="false" onAction="#editUserCreate" text="User Create" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="menuHelpAbout" mnemonicParsing="false" onAction="#helpAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

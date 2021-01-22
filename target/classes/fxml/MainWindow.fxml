@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.MainWindowController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="System">
+            <items>
+              <MenuItem fx:id="menuSystemLogout" mnemonicParsing="false" onAction="#SystemLogout" text="Log Out" />
+                  <MenuItem fx:id="menuSystemExit" mnemonicParsing="false" onAction="#SystemExit" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="menuHelpAbout" mnemonicParsing="false" onAction="#helpAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutY="27.0" prefHeight="372.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="KategorijuNustatymaiButton" layoutX="21.0" layoutY="243.0" mnemonicParsing="false" onAction="#KategorijuNustatymai" text="Kategoriju Nustatymai">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="VartotojuNustatymaiButton" layoutX="23.0" layoutY="120.0" mnemonicParsing="false" onAction="#VartotojuNustatymai" text="Vartotoju Nustatymai">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="KompanijuNustatymaiButton" layoutX="20.0" layoutY="181.0" mnemonicParsing="false" onAction="#KompanijuNustatymai" text="Kompaniju Nustatymai">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="-80.0" layoutY="29.0" text="Buhalterines apskaitos sistema">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
