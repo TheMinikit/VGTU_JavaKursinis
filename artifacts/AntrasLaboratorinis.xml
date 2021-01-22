@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="AntrasLaboratorinis">
+    <output-path>$PROJECT_DIR$/out/artifacts/AntrasLaboratorinis</output-path>
+    <root id="root">
+      <element id="archive" name="AntrasLaboratorinis.jar">
+        <element id="module-output" name="JavaLab" />
+      </element>
+    </root>
+  </artifact>
+</component>
